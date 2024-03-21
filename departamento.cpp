@@ -1,10 +1,12 @@
 #include "departamento.h"
 #include <string.h>
+#include "universidade.h"
 
 Departamento::Departamento(int n_id, const char* nome_dpto)
 {
     id = n_id;
     strcpy(nome, nome_dpto);
+    //pUniv = NULL;
 }
 
 Departamento::~Departamento()
@@ -25,4 +27,9 @@ void Departamento::setNome(const char* n)
 char* Departamento::getNome()
 {
     return nome;
+}
+
+void Departamento::setUniv(Universidade *pU)
+{
+    pUniv = pU;
 }

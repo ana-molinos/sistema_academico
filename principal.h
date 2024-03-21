@@ -1,3 +1,4 @@
+#pragma once
 #include "pessoa.h"
 
 /*
@@ -16,6 +17,8 @@ private:
     Universidade cambridge;
 
     Departamento daeln;
+    Departamento dainf;
+    Departamento damat;
     Departamento fisPrincenton;
     Departamento matCambridge;
 

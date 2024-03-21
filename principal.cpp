@@ -16,15 +16,21 @@ utfpr(),
 princenton(),
 cambridge(),
 daeln(),
+dainf(),
+damat(),
 fisPrincenton(),
 matCambridge()
 {
+    
+    //RELACIONAMENTOS ENTRE OBJETOS DEVEM SER FEITOS ANTES DAS EXECUÇÕES (NAS CONSTRUTORAS)!!!
+    //constrói os objetos pessoa
     simao.inicializa(3, 10, 1976, "Jean Simão");
     einstein.inicializa(14, 3, 1879, "Albert Einstein");
     newton.inicializa(4, 1, 1643, "Isaac Newton"); //POR QUE NÃO USAR A CONSTRUTORA DA CLASSE PESSOA?
 
-    utfpr.setNome("UTFPR"); //está passando o atributo nome do objeto
-    simao.setUniv(&utfpr);
+    //constrói os objetos universidade (1) e os associa aos objetos pessoa (2)
+    utfpr.setNome("UTFPR"); //(1)
+    simao.setUniv(&utfpr); //(2)
 
     princenton.setNome("Universidade de Princeton");
     einstein.setUniv(&princenton);
@@ -32,17 +38,31 @@ matCambridge()
     cambridge.setNome("Universidade de Cambridge");
     newton.setUniv(&cambridge);
 
-    daeln.setNome("Departamento de Eletronica - DAELN");
-    utfpr.setDpto(&daeln);
-    simao.setDptoFiliado(&daeln);
+    //constroi os objs departamento (1), os agrega aos objs universidade (2), 
+    //associa o obj universidade ao obj departamento criado (3) e os associa aos objs pessoa (4)
+    daeln.setNome("Departamento de Eletronica - DAELN"); //(1)
+    utfpr.setDpto(&daeln); //(2)
+    daeln.setUniv(&utfpr); //(3)
+    simao.setDptoFiliado(&daeln); //(4)
+    //(os passos (2) e (3) servem para que cada univ conheça seu dpto e cada dpto conheça sua univ, respectivamente)
 
     fisPrincenton.setNome("Departamento de Fisica");
     princenton.setDpto(&fisPrincenton);
+    fisPrincenton.setUniv(&princenton);
     einstein.setDptoFiliado(&fisPrincenton);
 
     matCambridge.setNome("Departamento de Matematica");
     cambridge.setDpto(&matCambridge);
+    matCambridge.setUniv(&cambridge);
     newton.setDptoFiliado(&matCambridge);
+
+    dainf.setNome("Departamento de Informatica - DAINF");//(1)
+    utfpr.setDpto(&dainf);//(2)
+    dainf.setUniv(&utfpr);//(3)
+
+    damat.setNome("Departamento de Matematica - DAMAT");
+    utfpr.setDpto(&damat);
+    damat.setUniv(&utfpr);
 
     /*
         O que é feito aqui: o nome do departamento é configurado utilizando o metodo da classe dpto,
@@ -101,6 +121,10 @@ void Principal::executar(){
     simao.imprimeNomeUnivDpto();
     einstein.imprimeNomeUnivDpto();
     newton.imprimeNomeUnivDpto();
+
+    utfpr.imprimeDptos();
+    princenton.imprimeDptos();
+    cambridge.imprimeDptos();
 
      
 

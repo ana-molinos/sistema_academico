@@ -6,7 +6,7 @@ class Universidade
 private:
     char nomeUniv[30];
 
-    Departamento* pDpto;
+    Departamento* dptos[50];
 
 public:
     Universidade(const char* nome = "");
@@ -16,4 +16,5 @@ public:
     void setNome(const char* nome);
     char* getNome();
     void setDpto(Departamento* pD);
+    void imprimeDptos();
 };
