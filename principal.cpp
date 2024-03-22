@@ -18,7 +18,8 @@ daeln(),
 dainf(),
 damat(),
 fisPrinceton(),
-matCambridge()
+matCambridge(),
+ana()
 {
     
     //RELACIONAMENTOS ENTRE OBJETOS DEVEM SER FEITOS ANTES DAS EXECUÇÕES (NAS CONSTRUTORAS)!!!
@@ -26,7 +27,11 @@ matCambridge()
     simao.inicializa(3, 10, 1976, "Jean Simão");
     einstein.inicializa(14, 3, 1879, "Albert Einstein");
     newton.inicializa(4, 1, 1643, "Isaac Newton");
-    
+
+    //TESTE ALUNO:
+    ana.inicializa(4, 5, 2001, "Ana Julia Molinos");
+    ana.setRaAluno(2582694);
+
     //constrói os objetos universidade (1) e os associa aos objetos pessoa (2)
     utfpr.setNome("UTFPR"); //(1)
     simao.setUniv(&utfpr); //(2)
@@ -114,14 +119,22 @@ void Principal::executar(){
     einstein.calculaImprime(diaAtual, mesAtual, anoAtual);
     newton.calculaImprime(diaAtual, mesAtual, anoAtual);
 
+    cout << endl;
+    
     simao.imprimeNomeUnivDpto();
     einstein.imprimeNomeUnivDpto();
     newton.imprimeNomeUnivDpto();
+
+    cout << endl;
 
     utfpr.imprimeDptos();
     princeton.imprimeDptos();
     cambridge.imprimeDptos();
 
+    cout << endl;
+
+    ana.calculaImprime(diaAtual, mesAtual, anoAtual);
+    ana.imprimeDadosAlunos();
 
     /*
         Para manter a boa pratica, foi implementada uma 3a função que chama calcIdade e posteriormente
