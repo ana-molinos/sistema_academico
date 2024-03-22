@@ -8,17 +8,16 @@ using namespace std;
     implicita pelo programa). Depois é utilizada a função inicializa.
 */
 Principal::Principal():
-
-simao(),
+simao(), //essa chamada garante que os ponteiros sejam anulados, por ex.
 einstein(),
 newton(),
 utfpr(),
-princenton(),
+princeton(),
 cambridge(),
 daeln(),
 dainf(),
 damat(),
-fisPrincenton(),
+fisPrinceton(),
 matCambridge()
 {
     
@@ -26,14 +25,14 @@ matCambridge()
     //constrói os objetos pessoa
     simao.inicializa(3, 10, 1976, "Jean Simão");
     einstein.inicializa(14, 3, 1879, "Albert Einstein");
-    newton.inicializa(4, 1, 1643, "Isaac Newton"); //POR QUE NÃO USAR A CONSTRUTORA DA CLASSE PESSOA?
-
+    newton.inicializa(4, 1, 1643, "Isaac Newton");
+    
     //constrói os objetos universidade (1) e os associa aos objetos pessoa (2)
     utfpr.setNome("UTFPR"); //(1)
     simao.setUniv(&utfpr); //(2)
 
-    princenton.setNome("Universidade de Princeton");
-    einstein.setUniv(&princenton);
+    princeton.setNome("Universidade de Princeton");
+    einstein.setUniv(&princeton);
 
     cambridge.setNome("Universidade de Cambridge");
     newton.setUniv(&cambridge);
@@ -46,10 +45,10 @@ matCambridge()
     simao.setDptoFiliado(&daeln); //(4)
     //(os passos (2) e (3) servem para que cada univ conheça seu dpto e cada dpto conheça sua univ, respectivamente)
 
-    fisPrincenton.setNome("Departamento de Fisica");
-    princenton.setDpto(&fisPrincenton);
-    fisPrincenton.setUniv(&princenton);
-    einstein.setDptoFiliado(&fisPrincenton);
+    fisPrinceton.setNome("Departamento de Fisica");
+    princeton.setDpto(&fisPrinceton);
+    fisPrinceton.setUniv(&princeton);
+    einstein.setDptoFiliado(&fisPrinceton);
 
     matCambridge.setNome("Departamento de Matematica");
     cambridge.setDpto(&matCambridge);
@@ -77,10 +76,7 @@ matCambridge()
         setUniv tem um ponteiro como parametro, entao precisa receber um endereço!
     */
 }
-/*
-    Aqui fica mais claro a utilidade do metodo inicializa, mas as construtoras perdem sua utilidade
-    desse ponto de vista?
-*/
+
 
 Principal::~Principal(){
 
@@ -123,21 +119,9 @@ void Principal::executar(){
     newton.imprimeNomeUnivDpto();
 
     utfpr.imprimeDptos();
-    princenton.imprimeDptos();
+    princeton.imprimeDptos();
     cambridge.imprimeDptos();
 
-     
-
-     /*
-      O professor implementou a função para imprimir os dados dentro da da função que calcula a idade;
-      Essa, por sua vez, está sendo chamada dentro da função construtora. Logo, na função executar,
-      ele precisa apenas declarar os objetos simao, einstein e newton.
-    */
-
-    /*
-      No entanto, é considerada uma boa prática a implementação de um método específico para cada
-      atividade a ser executada. E além disso, a criação do objeto antes da sua execução.
-    */
 
     /*
         Para manter a boa pratica, foi implementada uma 3a função que chama calcIdade e posteriormente

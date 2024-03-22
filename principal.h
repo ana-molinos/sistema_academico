@@ -1,5 +1,6 @@
 #pragma once
 #include "pessoa.h"
+#include "professor.h"
 
 /*
     A classe principal deve ter como atributos os objetos que seriam declarados e instanciados na main.
@@ -8,18 +9,18 @@
 class Principal
 {
 private:
-    Pessoa simao;
-    Pessoa einstein;
-    Pessoa newton;
+    Professor simao;
+    Professor einstein;
+    Professor newton;
 
     Universidade utfpr;
-    Universidade princenton;
+    Universidade princeton;
     Universidade cambridge;
 
     Departamento daeln;
     Departamento dainf;
     Departamento damat;
-    Departamento fisPrincenton;
+    Departamento fisPrinceton;
     Departamento matCambridge;
 
 

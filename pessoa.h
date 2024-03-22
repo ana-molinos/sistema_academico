@@ -1,18 +1,15 @@
 #pragma once
-#include "universidade.h"
 
 class Pessoa
 {
 
-private:
+protected:
     int dia;
     int mes;
     int ano;
     int idade;
     char nomeP[30];
 
-    Universidade *pUniv;
-    Departamento *pDptoFiliado;
     /*
         Ponteiros que estabelecem a relacação de associação entre o objeto pessoa e os objetos
         universidade e departamento.
@@ -46,9 +43,4 @@ public:
     int informaIdade(); //getIdade
     void imprimeDados();
     void calculaImprime(int diaAtual, int mesAtual, int anoAtual);
-    void setUniv(Universidade* pU);
-    void imprimeNomeUniv();
-    void setDptoFiliado(Departamento* pDp);
-    void imprimeNomeUnivDpto();
-
 };

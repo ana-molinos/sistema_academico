@@ -27,8 +27,6 @@ void Pessoa::inicializa(int diaNa, int mesNa, int anoNa, const char* nome){
     ano = anoNa;
     strcpy(nomeP, nome);
     idade = 0; //pratica de segurança
-    pUniv = NULL;
-    pDptoFiliado = NULL;
 }
 
 void Pessoa::calculaIdade(int diaAtual, int mesAtual, int anoAtual){
@@ -51,21 +49,4 @@ void Pessoa::imprimeDados(){
 void Pessoa::calculaImprime(int diaAtual, int mesAtual, int anoAtual){
     calculaIdade(diaAtual, mesAtual, anoAtual);
     imprimeDados();
-}
-
-//seta a referencia para o objeto associado (associa a universidade)
-void Pessoa::setUniv(Universidade* pU){
-    pUniv = pU;
-}
-
-void Pessoa::imprimeNomeUniv(){
-    cout << nomeP << " - " << pUniv->getNome() << endl;
-}
-
-void Pessoa::setDptoFiliado(Departamento* pDp){
-    pDptoFiliado = pDp;
-}
-
-void Pessoa::imprimeNomeUnivDpto(){
-    cout << nomeP << " - " << pUniv->getNome() << ": " << pDptoFiliado->getNome() << endl;
 }
