@@ -11,7 +11,7 @@ private:
     Disciplina* pDiscProx;
     Disciplina* pDiscAnt;
 
-private:
+public:
     Disciplina(int n_id = 0, const char* nome_disc = "");
     ~Disciplina();
     void setId(int n_id);
@@ -19,4 +19,9 @@ private:
     void setNome(const char* nome_disc);
     char* getNome();
     void setDptoAssociado(Departamento* pDpto);
+    Departamento* getDptoAssociado();
+    void setpDiscProx(Disciplina* pDisc);
+    Disciplina* getpDiscProx();
+    void setpDiscAnt(Disciplina* pDisc);
+    Disciplina* getpDiscAnt();
 };

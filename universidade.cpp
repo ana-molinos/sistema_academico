@@ -4,9 +4,8 @@
 using namespace std;
 
 Universidade::Universidade(const char* nome){
-    int i;
     strcpy(nomeUniv, nome);
-    for(i=0; i<50; i++)//aterra o 
+    for(int i=0; i<50; i++)//aterra o 
     {
         dptos[i]=NULL;
     }

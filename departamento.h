@@ -2,8 +2,10 @@
 //#include "universidade.h"
 
 class Universidade;
-//Redefinição da classe Universidade. (serve para evitar o include recursivo!) 
-//(universidade.h inclui departamento.h, logo departamento.h não pode incluir universidade.h)
+class Disciplina;
+//Redefinição das classes Universidade e Disciplina. (serve para evitar o include recursivo!) 
+//(universidade.h e disciplina.h incluem departamento.h, logo departamento.h não pode incluir 
+//universidade.h nem disciplina.h)
 
 class Departamento{
 
@@ -11,6 +13,8 @@ private:
     int id;
     char nome[100];
     Universidade *pUniv;
+    Disciplina* pDiscPrim;
+    Disciplina* pDiscUlt;
 
 public:
     Departamento(int n_id = 0, const char* nome_dpto = "");
@@ -19,5 +23,7 @@ public:
     void setNome(const char* n);
     char* getNome();
     void setUniv(Universidade* pU);
+    void incluiDisciplina(Disciplina* pDisc);
+    void listaDisciplinas();
 
 };

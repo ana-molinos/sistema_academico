@@ -4244,7 +4244,7 @@
 											"font": "Arial;20;1",
 											"left": 1715,
 											"top": 1577,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "Disciplina"
 										},
@@ -4285,7 +4285,7 @@
 									"font": "Arial;20;0",
 									"left": 1710,
 									"top": 1570,
-									"width": 444.0078125,
+									"width": 461,
 									"height": 32,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGOlqqrDQlAayM="
@@ -4324,7 +4324,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1607,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "-id: int",
 											"horizontalAlignment": 0
@@ -4343,7 +4343,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1629,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "-nome: char[150]",
 											"horizontalAlignment": 0
@@ -4362,7 +4362,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1651,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "-pDptoAssociado: Departamento*",
 											"horizontalAlignment": 0
@@ -4381,7 +4381,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1673,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "-pDiscProx: Disciplina*",
 											"horizontalAlignment": 0
@@ -4400,7 +4400,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1695,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "+pDiscAnt: Disciplina*",
 											"horizontalAlignment": 0
@@ -4411,7 +4411,7 @@
 									"font": "Arial;20;0",
 									"left": 1710,
 									"top": 1602,
-									"width": 444.0078125,
+									"width": 461,
 									"height": 118
 								},
 								{
@@ -4438,7 +4438,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1725,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "«create»+Disciplina(n_id: int, nome_disc: char*)",
 											"horizontalAlignment": 0
@@ -4457,7 +4457,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1747,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "«destroy»+Disciplina()",
 											"horizontalAlignment": 0
@@ -4476,7 +4476,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1769,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "+setId(n_id: int): void",
 											"horizontalAlignment": 0
@@ -4495,7 +4495,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1791,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "+getId(): int",
 											"horizontalAlignment": 0
@@ -4514,7 +4514,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1813,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "+setNome(nome_disc: char*): void",
 											"horizontalAlignment": 0
@@ -4533,7 +4533,7 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1835,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "+getNome(): char*",
 											"horizontalAlignment": 0
@@ -4552,9 +4552,104 @@
 											"font": "Arial;20;0",
 											"left": 1715,
 											"top": 1857,
-											"width": 434.0078125,
+											"width": 451,
 											"height": 20,
 											"text": "+setDptoAssociado(pDpto: Departamento*): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGOnrXJrbmXzos=",
+											"_parent": {
+												"$ref": "AAAAAAGOlqqrDglFr1s="
+											},
+											"model": {
+												"$ref": "AAAAAAGOnrXJnbmFzVA="
+											},
+											"fillColor": "#575757",
+											"fontColor": "#ffffff",
+											"font": "Arial;20;0",
+											"left": 1715,
+											"top": 1879,
+											"width": 451,
+											"height": 20,
+											"text": "+getDptoAssociado(): Departamento*",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGOnrZnYLqclJU=",
+											"_parent": {
+												"$ref": "AAAAAAGOlqqrDglFr1s="
+											},
+											"model": {
+												"$ref": "AAAAAAGOnrZnWbqKed0="
+											},
+											"fillColor": "#575757",
+											"fontColor": "#ffffff",
+											"font": "Arial;20;0",
+											"left": 1715,
+											"top": 1901,
+											"width": 451,
+											"height": 20,
+											"text": "+setpDiscProx(pDisc: Disciplina*): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGOnrcVoru1zjk=",
+											"_parent": {
+												"$ref": "AAAAAAGOlqqrDglFr1s="
+											},
+											"model": {
+												"$ref": "AAAAAAGOnrcVmrujj8A="
+											},
+											"fillColor": "#575757",
+											"fontColor": "#ffffff",
+											"font": "Arial;20;0",
+											"left": 1715,
+											"top": 1923,
+											"width": 451,
+											"height": 20,
+											"text": "+getpDiscProx(): Disciplina*",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGOnrdhGLy6qc0=",
+											"_parent": {
+												"$ref": "AAAAAAGOlqqrDglFr1s="
+											},
+											"model": {
+												"$ref": "AAAAAAGOnrdhD7yolqc="
+											},
+											"fillColor": "#575757",
+											"fontColor": "#ffffff",
+											"font": "Arial;20;0",
+											"left": 1715,
+											"top": 1945,
+											"width": 451,
+											"height": 20,
+											"text": "+setpDiscAnt(pDisc: Disciplina*): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGOnreBVr9sIdQ=",
+											"_parent": {
+												"$ref": "AAAAAAGOlqqrDglFr1s="
+											},
+											"model": {
+												"$ref": "AAAAAAGOnreBS79amr8="
+											},
+											"fillColor": "#575757",
+											"fontColor": "#ffffff",
+											"font": "Arial;20;0",
+											"left": 1715,
+											"top": 1967,
+											"width": 451,
+											"height": 20,
+											"text": "+getpDiscAnt(): Disciplina*",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4563,8 +4658,8 @@
 									"font": "Arial;20;0",
 									"left": 1710,
 									"top": 1720,
-									"width": 444.0078125,
-									"height": 162
+									"width": 461,
+									"height": 272
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -4609,8 +4704,8 @@
 							"containerChangeable": true,
 							"left": 1710,
 							"top": 1570,
-							"width": 443.0078125,
-							"height": 312,
+							"width": 460,
+							"height": 422,
 							"nameCompartment": {
 								"$ref": "AAAAAAGOlqqrDQk/8gE="
 							},
@@ -6649,6 +6744,119 @@
 										"$ref": "AAAAAAGOlsFZw2ur4uo="
 									},
 									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGOnrXJnbmFzVA=",
+							"_parent": {
+								"$ref": "AAAAAAGOlqqrDQk8CaY="
+							},
+							"name": "getDptoAssociado",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGOnrZnK7pS4/U=",
+									"_parent": {
+										"$ref": "AAAAAAGOnrXJnbmFzVA="
+									},
+									"type": "Departamento*",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGOnrZnWbqKed0=",
+							"_parent": {
+								"$ref": "AAAAAAGOlqqrDQk8CaY="
+							},
+							"name": "setpDiscProx",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGOnrcVVLtXE00=",
+									"_parent": {
+										"$ref": "AAAAAAGOnrZnWbqKed0="
+									},
+									"name": "pDisc",
+									"type": "Disciplina*"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGOnrcVVLtYuHE=",
+									"_parent": {
+										"$ref": "AAAAAAGOnrZnWbqKed0="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGOnrcVmrujj8A=",
+							"_parent": {
+								"$ref": "AAAAAAGOlqqrDQk8CaY="
+							},
+							"name": "getpDiscProx",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGOnrdg5Lxw/3M=",
+									"_parent": {
+										"$ref": "AAAAAAGOnrcVmrujj8A="
+									},
+									"type": "Disciplina*",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGOnrdhD7yolqc=",
+							"_parent": {
+								"$ref": "AAAAAAGOlqqrDQk8CaY="
+							},
+							"name": "setpDiscAnt",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGOnreyRsDtllw=",
+									"_parent": {
+										"$ref": "AAAAAAGOnrdhD7yolqc="
+									},
+									"name": "pDisc",
+									"type": "Disciplina*"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGOnreyRsDuZnc=",
+									"_parent": {
+										"$ref": "AAAAAAGOnrdhD7yolqc="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGOnreBS79amr8=",
+							"_parent": {
+								"$ref": "AAAAAAGOlqqrDQk8CaY="
+							},
+							"name": "getpDiscAnt",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGOnrg2ksZghJ0=",
+									"_parent": {
+										"$ref": "AAAAAAGOnreBS79amr8="
+									},
+									"type": "Disciplina*",
 									"direction": "return"
 								}
 							]
