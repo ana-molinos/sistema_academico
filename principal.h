@@ -2,6 +2,7 @@
 #include "pessoa.h"
 #include "professor.h"
 #include "aluno.h"
+#include "disciplina.h"
 
 /*
     A classe principal deve ter como atributos os objetos que seriam declarados e instanciados na main.
@@ -24,15 +25,32 @@ private:
     Departamento fisPrinceton;
     Departamento matCambridge;
 
+    Disciplina logica;
+    Disciplina tecProg;
+    Disciplina gaal;
+    Disciplina fsi;
+    Disciplina socio;
+    Disciplina ed1;
+    
     Aluno ana;
+    Aluno beto;
+    Aluno carla;
 
     int diaAtual;
     int mesAtual;
     int anoAtual;
-    //as variaveis aqui nao podem ter o mesmo nome das variaveis da classe pessoa!!!!!!!!!!!!!!!
 
 public:
     Principal(); //construtora que incializa os atributos (que eram os objetos da main)
     ~Principal(); //destrutora
+    void inicializaUniversidades();
+    void inicializaDepartamentos();
+    void inicializaProfessores();
+    void inicializaDisciplinas();
+    void inicializaAlunos();
+    void calculaIdades();
+    void imprimeDadosProfs();
+    void imprimeDptos();
+    void imprimeDisciplinas();
     void executar(); //função que executa todos os passos que antes eram executados na main
 };

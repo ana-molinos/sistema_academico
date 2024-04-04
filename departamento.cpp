@@ -2,6 +2,8 @@
 #include <string.h>
 #include "universidade.h"
 #include "disciplina.h"
+#include <iostream>
+using namespace std;
 
 Departamento::Departamento(int n_id, const char* nome_dpto)
 {
@@ -37,6 +39,8 @@ char* Departamento::getNome()
 void Departamento::setUniv(Universidade *pU)
 {
     pUniv = pU;
+    pU->setDpto(this);
+    //toda vez que associo uma univ a um dpto, ja estou incluido ele na lista de dptos associados da univ
 }
 
 void Departamento::incluiDisciplina(Disciplina* pDisc)
@@ -54,5 +58,17 @@ void Departamento::incluiDisciplina(Disciplina* pDisc)
         pDisc->setpDiscAnt(pDiscUlt);
         //a ultima disciplina deve ser atualizada para a disciplina atual
         pDiscUlt = pDisc;
+    }
+}
+
+void Departamento::listaDisciplinas()
+{
+    Disciplina* pDisc = pDiscPrim;
+
+    cout << "LISTA DE DISCIPLINAS - " << nome << endl;
+    while(pDisc != NULL)
+    {
+        cout << "Nome: " << pDisc->getNome() << " - " << "ID:" << pDisc->getId() << endl;
+        pDisc = pDisc->getpDiscProx();
     }
 }

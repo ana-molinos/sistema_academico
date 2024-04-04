@@ -2,8 +2,7 @@
 #include <string.h>
 
 Disciplina::Disciplina(int n_id, const char* nome_disc){
-    id = n_id;
-    strcpy(nome, nome_disc);
+    inicializa(n_id, nome_disc);
     pDiscProx = NULL;
     pDiscAnt = NULL;
 }
@@ -11,6 +10,11 @@ Disciplina::Disciplina(int n_id, const char* nome_disc){
 Disciplina::~Disciplina(){
     pDiscProx = NULL;
     pDiscAnt = NULL;
+}
+
+void Disciplina::inicializa(int n_id, const char* nome_disc){
+    id = n_id;
+    strcpy(nome, nome_disc);
 }
 
 void Disciplina::setId(int n_id){

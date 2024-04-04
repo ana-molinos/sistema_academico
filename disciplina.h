@@ -14,6 +14,7 @@ private:
 public:
     Disciplina(int n_id = 0, const char* nome_disc = "");
     ~Disciplina();
+    void inicializa(int n_id, const char* nome_disc);
     void setId(int n_id);
     int getId();
     void setNome(const char* nome_disc);

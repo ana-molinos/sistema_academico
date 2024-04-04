@@ -19,84 +19,104 @@ dainf(),
 damat(),
 fisPrinceton(),
 matCambridge(),
-ana()
+ana(),
+beto(),
+carla()
 {
-    
     //RELACIONAMENTOS ENTRE OBJETOS DEVEM SER FEITOS ANTES DAS EXECUÇÕES (NAS CONSTRUTORAS)!!!
-    //constrói os objetos pessoa
-    simao.inicializa(3, 10, 1976, "Jean Simão");
-    einstein.inicializa(14, 3, 1879, "Albert Einstein");
-    newton.inicializa(4, 1, 1643, "Isaac Newton");
 
-    //TESTE ALUNO:
-    ana.inicializa(4, 5, 2001, "Ana Julia Molinos");
-    ana.setRaAluno(2582694);
+    inicializaUniversidades();
+    inicializaDepartamentos();
+    inicializaProfessores();
+    inicializaDisciplinas();
+    inicializaAlunos();
 
-    //constrói os objetos universidade (1) e os associa aos objetos pessoa (2)
-    utfpr.setNome("UTFPR"); //(1)
-    simao.setUniv(&utfpr); //(2)
-
-    princeton.setNome("Universidade de Princeton");
-    einstein.setUniv(&princeton);
-
-    cambridge.setNome("Universidade de Cambridge");
-    newton.setUniv(&cambridge);
-
-    //constroi os objs departamento (1), os agrega aos objs universidade (2), 
-    //associa o obj universidade ao obj departamento criado (3) e os associa aos objs pessoa (4)
-    daeln.setNome("Departamento de Eletronica - DAELN"); //(1)
-    utfpr.setDpto(&daeln); //(2)
-    daeln.setUniv(&utfpr); //(3)
-    simao.setDptoFiliado(&daeln); //(4)
-    //(os passos (2) e (3) servem para que cada univ conheça seu dpto e cada dpto conheça sua univ, respectivamente)
-
-    fisPrinceton.setNome("Departamento de Fisica");
-    princeton.setDpto(&fisPrinceton);
-    fisPrinceton.setUniv(&princeton);
-    einstein.setDptoFiliado(&fisPrinceton);
-
-    matCambridge.setNome("Departamento de Matematica");
-    cambridge.setDpto(&matCambridge);
-    matCambridge.setUniv(&cambridge);
-    newton.setDptoFiliado(&matCambridge);
-
-    dainf.setNome("Departamento de Informatica - DAINF");//(1)
-    utfpr.setDpto(&dainf);//(2)
-    dainf.setUniv(&utfpr);//(3)
-
-    damat.setNome("Departamento de Matematica - DAMAT");
-    utfpr.setDpto(&damat);
-    damat.setUniv(&utfpr);
-
-    /*
-        O que é feito aqui: o nome do departamento é configurado utilizando o metodo da classe dpto,
-        (utilizando o objeto dainf). Enquanto que, o objeto dainf é associado ao objeto simao por 
-        meio do método da classe pessoa (utilizando o objeto simao). LOGO: METODO DA CLASSE X É 
-        UTILIZADO APENAS PELO OBJETO DA CLASSE X, NÃO FAZER CONFUSÃO!
-    */
     
-
-    /*
-        Associa o objeto utfpr ao objeto simao via passagem por referencia do endereço do objeto utfpr.
-        setUniv tem um ponteiro como parametro, entao precisa receber um endereço!
-    */
+    //TESTE ALUNO:
 }
-
 
 Principal::~Principal(){
 
 }
 
-void Principal::executar(){
-    /*cout << "Informe dia, mes e ano atuais:" << endl;
-    cin >> diaAtual;
-    cin >> mesAtual;
-    cin >> anoAtual;*/
+void Principal::inicializaUniversidades()
+{
+    utfpr.setNome("UTFPR");
+    princeton.setNome("Universidade de Princeton");
+    cambridge.setNome("Universidade de Cambridge");
 
-    /*
-        Comandos copiados dos slides para gerar a data atual automaticamente, no lugar de pedir ao
-        usuário.
-    */
+}
+
+void Principal::inicializaDepartamentos()
+{
+    //dá nome aos departamentos
+    daeln.setNome("Departamento de Eletronica - DAELN");
+    fisPrinceton.setNome("Departamento de Fisica");
+    matCambridge.setNome("Departamento de Matematica");
+    dainf.setNome("Departamento de Informatica - DAINF");
+    damat.setNome("Departamento de Matematica - DAMAT");
+
+    //associa as universidades aos departamentos e agrega os departamento às univesidades 
+    //por meio da inclusão na lista de dptos da univ
+    daeln.setUniv(&utfpr);
+    fisPrinceton.setUniv(&princeton);
+    matCambridge.setUniv(&cambridge);
+    dainf.setUniv(&utfpr);
+    damat.setUniv(&utfpr);
+}
+
+void Principal::inicializaProfessores()
+{
+    //constrói os objetos da classe Professor
+    simao.inicializa(3, 10, 1976, "Jean Simão");
+    einstein.inicializa(14, 3, 1879, "Albert Einstein");
+    newton.inicializa(4, 1, 1643, "Isaac Newton");
+
+    //associa os professores às universidades
+    simao.setUniv(&utfpr);
+    einstein.setUniv(&princeton);    
+    newton.setUniv(&cambridge);
+
+    //associa os professores aos departamentos
+    simao.setDptoFiliado(&daeln); 
+    einstein.setDptoFiliado(&fisPrinceton);
+    newton.setDptoFiliado(&matCambridge);
+}
+
+void Principal::inicializaDisciplinas()
+{
+    //incializa as disciplinas
+    logica.inicializa(20, "Introducao a Logica para Computacao");
+    tecProg.inicializa(20, "Tecnicas de Programacao");
+    gaal.inicializa(71, "Geometria Analitica e Algebra Linear");
+    fsi.inicializa(10, "Fundamentos de Sistemas de Informacao");
+    socio.inicializa(7, "Sociologia");
+    ed1.inicializa(20, "Estrutura de Dados I");
+
+    //agrega fortemente as disciplinas a seus respectivos departamentos e associa os departamentos a disciplina
+    //via lista duplamente encadeada de disciplinas
+    logica.setDptoAssociado(&dainf);
+    tecProg.setDptoAssociado(&daeln);
+    gaal.setDptoAssociado(&damat);
+    fsi.setDptoAssociado(&dainf);
+    socio.setDptoAssociado(&dainf);
+    ed1.setDptoAssociado(&dainf);
+}
+
+void Principal::inicializaAlunos()
+{
+    ana.inicializa(4, 5, 2001, "Ana Julia Molinos");
+    beto.inicializa(22, 11, 1999, "Beto da Silva");
+    carla.inicializa(21, 12, 1999, "Carla Medeiros");
+
+    ana.setRaAluno(2582694);
+    beto.setRaAluno(2698341);
+    carla.setRaAluno(2764893);
+}
+
+void Principal::calculaIdades()
+{
+     //Comandos copiados dos slides para gerar a data atual automaticamente:
     
     // O ponteiro 'local' é do tipo struct tm, que contém data e hora.
     struct tm *local;
@@ -115,30 +135,56 @@ void Principal::executar(){
     // Ao invés de 2009, retorna 109.
     anoAtual = local->tm_year + 1900;
 
-    simao.calculaImprime(diaAtual, mesAtual, anoAtual);
-    einstein.calculaImprime(diaAtual, mesAtual, anoAtual);
-    newton.calculaImprime(diaAtual, mesAtual, anoAtual);
+    simao.calculaIdade(diaAtual, mesAtual, anoAtual);
+    einstein.calculaIdade(diaAtual, mesAtual, anoAtual);
+    newton.calculaIdade(diaAtual, mesAtual, anoAtual);
+}
 
+void Principal::imprimeDadosProfs()
+{
+    simao.imprimeDados(); //imprime idade
+    simao.imprimeNomeUnivDpto();//imprime dados de onde trabalha
+    cout << endl;
+    einstein.imprimeDados(); //imprime idade
+    einstein.imprimeNomeUnivDpto();
+    cout << endl;
+    newton.imprimeDados(); //imprime idade
+    newton.imprimeNomeUnivDpto();
+}
+
+void Principal::imprimeDptos()
+{
+    utfpr.imprimeDptos();
+    cout << endl;
+    princeton.imprimeDptos();
+    cout << endl;
+    cambridge.imprimeDptos();
+}
+
+void Principal::imprimeDisciplinas()
+{
+    daeln.listaDisciplinas();
+    cout << endl;
+    dainf.listaDisciplinas();
+    cout << endl;
+    damat.listaDisciplinas();
+    cout << endl;
+    fisPrinceton.listaDisciplinas();
+    cout << endl;
+    matCambridge.listaDisciplinas();
+}
+
+void Principal::executar(){
+
+    calculaIdades();
+    cout << endl;
+    imprimeDadosProfs();
+    cout << endl;
+    imprimeDptos();
+    cout << endl;
+    imprimeDisciplinas();    
     cout << endl;
     
-    simao.imprimeNomeUnivDpto();
-    einstein.imprimeNomeUnivDpto();
-    newton.imprimeNomeUnivDpto();
-
-    cout << endl;
-
-    utfpr.imprimeDptos();
-    princeton.imprimeDptos();
-    cambridge.imprimeDptos();
-
-    cout << endl;
-
-    ana.calculaImprime(diaAtual, mesAtual, anoAtual);
-    ana.imprimeDadosAlunos();
-
-    /*
-        Para manter a boa pratica, foi implementada uma 3a função que chama calcIdade e posteriormente
-        a imprimeDados, de modo a manter o desacoplamento e coesão, mas diminuir a quantidade de
-        chamadas de função.
-    */
+    /*ana.calculaImprime(diaAtual, mesAtual, anoAtual);
+    ana.imprimeDadosAlunos();*/
 }
