@@ -2,6 +2,7 @@
 #include <string.h>
 #include "universidade.h"
 #include "disciplina.h"
+#include "elDisciplina.h"
 #include <iostream>
 using namespace std;
 
@@ -10,15 +11,15 @@ Departamento::Departamento(int n_id, const char* nome_dpto)
     id = n_id;
     strcpy(nome, nome_dpto);
     pUniv = NULL;
-    pDiscPrim = NULL;
-    pDiscUlt = NULL;
+    pElDiscPrim = NULL;
+    pElDiscUlt = NULL;
 }
 
 Departamento::~Departamento()
 {
     pUniv = NULL;
-    pDiscPrim = NULL;
-    pDiscUlt = NULL;
+    pElDiscPrim = NULL;
+    pElDiscUlt = NULL;
 }
 
 int Departamento::getId()
@@ -45,30 +46,38 @@ void Departamento::setUniv(Universidade *pU)
 
 void Departamento::incluiDisciplina(Disciplina* pDisc)
 {
-    if(pDiscPrim == NULL)
+    ElDisciplina* paux; //ponteiro auxiliar para o elemento disciplina
+
+    //alocação dinamica de um novo objeto elemento disciplina que tem seu endereço passado para paux
+    paux = new ElDisciplina(); 
+
+    //o elemento disciplina passa a apontar para a disciplina que esta sendo incluida
+    paux->setpDisc(pDisc);
+
+    if(pElDiscPrim == NULL)
     {
-        pDiscPrim = pDisc;
-        pDiscUlt = pDisc;
+        pElDiscPrim = paux;   
+        pElDiscUlt = paux;
     }
     else
     {
-        //o prox da ultima disciplina deve receber a disciplina em execução
-        pDiscUlt->setpDiscProx(pDisc); //tem que fazer set e get 
-        //o anterior da disciplina em execução deve receber a ultima disciplina da lista
-        pDisc->setpDiscAnt(pDiscUlt);
+        //o prox do ultimo elemento disciplina deve apontar para o elemento disciplina atual
+        pElDiscUlt->setpElDiscProx(paux);
+        //o anterior do elemento disciplina em qeustão deve receber o ultimo elemento disciplina lista
+        paux->setpElDiscAnt(pElDiscUlt);
         //a ultima disciplina deve ser atualizada para a disciplina atual
-        pDiscUlt = pDisc;
+        pElDiscUlt = paux;
     }
 }
 
 void Departamento::listaDisciplinas()
 {
-    Disciplina* pDisc = pDiscPrim;
+    ElDisciplina* pElDisc = pElDiscPrim;
 
     cout << "LISTA DE DISCIPLINAS - " << nome << endl;
-    while(pDisc != NULL)
+    while(pElDisc != NULL)
     {
-        cout << "Nome: " << pDisc->getNome() << " - " << "ID:" << pDisc->getId() << endl;
-        pDisc = pDisc->getpDiscProx();
+        cout << "Nome: " << pElDisc->getNome() << " - " << "ID :" << pElDisc->getId() << endl;
+        pElDisc = pElDisc->getpElDiscProx();
     }
 }

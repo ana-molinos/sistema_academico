@@ -1,5 +1,8 @@
 #pragma once
 #include "departamento.h"
+#include <string.h>
+#include <iostream>
+using namespace std;
 
 class Universidade
 {

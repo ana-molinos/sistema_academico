@@ -1,7 +1,5 @@
 #include "universidade.h"
-#include <string.h>
-#include <iostream>
-using namespace std;
+
 
 Universidade::Universidade(const char* nome){
     strcpy(nomeUniv, nome);
