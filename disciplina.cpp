@@ -1,15 +1,31 @@
 #include "disciplina.h"
 #include <string.h>
+#include <iostream>
+using namespace std;
 
-Disciplina::Disciplina(int n_id, const char* nome_disc){
+Disciplina::Disciplina(int n_id, const char* nome_disc, int n_a, int qtdd_a){
     inicializa(n_id, nome_disc);
-    pDiscProx = NULL;
-    pDiscAnt = NULL;
+    n_alunos = n_a;
+    qtdd_alunos = qtdd_a;
+    pDptoAssociado = NULL;
+    pElAlunoPrim = NULL;
+    pElAlunoUlt = NULL;
 }
 
 Disciplina::~Disciplina(){
-    pDiscProx = NULL;
-    pDiscAnt = NULL;
+    ElAluno* paux;
+    paux = pElAlunoPrim;
+
+    while(paux!=NULL)
+    {
+        pElAlunoPrim = paux->getpElAlunoProx();
+        delete paux;
+        paux = pElAlunoPrim;
+    }
+    
+    pDptoAssociado = NULL;
+    pElAlunoPrim = NULL;
+    pElAlunoUlt = NULL;
 }
 
 void Disciplina::inicializa(int n_id, const char* nome_disc){
@@ -33,6 +49,10 @@ char* Disciplina::getNome(){
     return nome;
 }
 
+int Disciplina::getQtddAlunos(){
+    return qtdd_alunos + 1;
+}
+
 void Disciplina::setDptoAssociado(Departamento* pDpto){
     pDptoAssociado = pDpto;
 
@@ -46,22 +66,46 @@ Departamento* Disciplina::getDptoAssociado()
     return pDptoAssociado;
 }
 
-void Disciplina::setpDiscProx(Disciplina* pDisc)
-{
-    pDiscProx = pDisc;
+void Disciplina::incluiAluno(Aluno* pAluno){
+    //cria auxiliar e aponta para o elemento aluno
+    ElAluno* paux;
+    paux = new ElAluno();
+
+    //o elemento aluno passa a apontar para o aluno que sera incluido na lista
+    paux->setpAluno(pAluno);
+
+    if(qtdd_alunos<n_alunos){
+        if(pElAlunoPrim==NULL)
+        {
+            pElAlunoPrim = paux;
+            pElAlunoUlt = paux;
+        }
+        else
+        {
+            pElAlunoUlt->setpElAlunoProx(paux);
+            paux->setpElAlunoAnt(pElAlunoUlt);
+            pElAlunoUlt = paux;
+        }
+        qtdd_alunos++;
+    }
+    else
+        cout << "Lista de alunos cheia, impossível incluir alunos!" << endl;
 }
 
-Disciplina* Disciplina::getpDiscProx()
-{
-    return pDiscProx;
-}
+void Disciplina::listaAlunos(){
+    ElAluno* paux;
+    paux = pElAlunoPrim;
 
-void Disciplina::setpDiscAnt(Disciplina* pDisc)
-{
-    pDiscAnt = pDisc;
-}
-
-Disciplina* Disciplina::getpDiscAnt()
-{
-    return pDiscAnt;
+    if(paux ==NULL)
+        cout << "Nenhum aluno matriculado na disciplina " << nome << "!" << endl;
+    else
+    {
+        cout << "LISTA DE ALUNOS DA DISCIPLINA " << nome << endl;
+        cout << qtdd_alunos << " alunos matriculados." << endl;
+        while(paux!=NULL)
+        {
+            cout << paux->getNome() << " - RA: " << paux->getRa() << endl;
+            paux = paux->getpElAlunoProx();
+        }
+    }
 }

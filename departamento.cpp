@@ -17,6 +17,16 @@ Departamento::Departamento(int n_id, const char* nome_dpto)
 
 Departamento::~Departamento()
 {
+    ElDisciplina* paux;
+    paux = pElDiscPrim;
+
+    while(paux != NULL)
+    {
+        pElDiscPrim = paux->getpElDiscProx();
+        delete paux;
+        paux = pElDiscPrim;
+    }
+    
     pUniv = NULL;
     pElDiscPrim = NULL;
     pElDiscUlt = NULL;

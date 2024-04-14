@@ -52,5 +52,6 @@ public:
     void imprimeDadosProfs();
     void imprimeDptos();
     void imprimeDisciplinas();
+    void imprimeAlunos();
     void executar(); //função que executa todos os passos que antes eram executados na main
 };

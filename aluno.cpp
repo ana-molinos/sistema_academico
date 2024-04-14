@@ -30,6 +30,10 @@ int Aluno::getRaAluno()
     return raAluno;
 }
 
+char* Aluno::getNome(){
+    return nomeP;
+}
+
 void Aluno::imprimeDadosAlunos()
 {
     cout << "Aluno: " << nomeP << " - Registro academico: " << raAluno << endl;

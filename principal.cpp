@@ -21,15 +21,22 @@ fisPrinceton(),
 matCambridge(),
 ana(),
 beto(),
-carla()
+carla(),
+logica(),
+tecProg(),
+gaal(),
+fsi(),
+socio(),
+ed1()
 {
     //RELACIONAMENTOS ENTRE OBJETOS DEVEM SER FEITOS ANTES DAS EXECUÇÕES (NAS CONSTRUTORAS)!!!
 
     inicializaUniversidades();
     inicializaDepartamentos();
     inicializaProfessores();
-    inicializaDisciplinas();
     inicializaAlunos();
+    inicializaDisciplinas();
+    
 
     
     //TESTE ALUNO:
@@ -101,6 +108,22 @@ void Principal::inicializaDisciplinas()
     fsi.setDptoAssociado(&dainf);
     socio.setDptoAssociado(&dainf);
     ed1.setDptoAssociado(&dainf);
+
+    //associa os alunos incluindo-os na lista de matrícula da disciplina
+    logica.incluiAluno(&ana);
+    logica.incluiAluno(&beto);
+    logica.incluiAluno(&carla);
+
+    tecProg.incluiAluno(&ana);
+    tecProg.incluiAluno(&beto);
+
+    gaal.incluiAluno(&ana);
+    gaal.incluiAluno(&carla);
+
+    fsi.incluiAluno(&beto);
+    fsi.incluiAluno(&carla);
+
+    socio.incluiAluno(&ana);
 }
 
 void Principal::inicializaAlunos()
@@ -174,6 +197,21 @@ void Principal::imprimeDisciplinas()
     matCambridge.listaDisciplinas();
 }
 
+void Principal::imprimeAlunos()
+{
+    logica.listaAlunos();
+    cout << endl;
+    tecProg.listaAlunos();
+    cout << endl;
+    gaal.listaAlunos();
+    cout << endl;
+    fsi.listaAlunos();
+    cout << endl;
+    socio.listaAlunos();
+    cout << endl;
+    ed1.listaAlunos();
+}
+
 void Principal::executar(){
 
     calculaIdades();
@@ -184,6 +222,7 @@ void Principal::executar(){
     cout << endl;
     imprimeDisciplinas();    
     cout << endl;
+    imprimeAlunos();
     
     /*ana.calculaImprime(diaAtual, mesAtual, anoAtual);
     ana.imprimeDadosAlunos();*/

@@ -12,5 +12,6 @@ public:
     ~Aluno();
     void setRaAluno(int ra);
     int getRaAluno();
+    char* getNome();
     void imprimeDadosAlunos();
 };
