@@ -1,6 +1,7 @@
 #pragma once
-#include "departamento.h"
 #include "listaAluno.h"
+
+class Departamento;
 
 class Disciplina
 {

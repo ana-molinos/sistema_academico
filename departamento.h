@@ -1,9 +1,8 @@
 #pragma once
-//#include "universidade.h"
+#include "disciplina.h"
+#include "listaDisciplina.h"
 
 class Universidade;
-class Disciplina;
-class ElDisciplina;
 //Redefinição das classes Universidade e Disciplina. (serve para evitar o include recursivo!) 
 //(universidade.h e disciplina.h incluem departamento.h, logo departamento.h não pode incluir 
 //universidade.h nem disciplina.h)
@@ -14,8 +13,7 @@ private:
     int id;
     char nome[100];
     Universidade *pUniv;
-    ElDisciplina* pElDiscPrim;
-    ElDisciplina* pElDiscUlt;
+    ListaDisciplina objListaDisciplinas;
 
 public:
     Departamento(int n_id = 0, const char* nome_dpto = "");
