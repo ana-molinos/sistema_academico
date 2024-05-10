@@ -1,5 +1,6 @@
 #include "departamento.h"
 #include "universidade.h"
+#include "disciplina.h"
 #include <iostream>
 using namespace std;
 

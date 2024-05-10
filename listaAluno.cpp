@@ -1,6 +1,5 @@
 #include "listaAluno.h"
-#include <iostream>
-using namespace std;
+#include "minhaString.h"
 
 ListaAluno::ListaAluno(int n_a, int q_a)
 {
@@ -54,7 +53,7 @@ void ListaAluno::incluiAluno(Aluno* pAluno){
 
 void ListaAluno::listeAlunos()
 {
-     ElAluno* paux;
+    ElAluno* paux;
     paux = pElAlunoPrim;
 
     if(paux ==NULL)
@@ -64,7 +63,9 @@ void ListaAluno::listeAlunos()
         cout << qtdd_alunos << " alunos matriculados." << endl;
         while(paux!=NULL)
         {
-            cout << paux->getNome() << " - RA: " << paux->getRa() << endl;
+            MinhaString* nome = new MinhaString(paux->getNome());
+
+            cout << *nome << " - RA: " << paux->getRa() << endl;
             paux = paux->getpElAlunoProx();
         }
     }

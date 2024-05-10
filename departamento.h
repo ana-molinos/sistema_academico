@@ -1,8 +1,8 @@
 #pragma once
-#include "disciplina.h"
 #include "listaDisciplina.h"
 
 class Universidade;
+class Disciplina;
 //Redefinição das classes Universidade e Disciplina. (serve para evitar o include recursivo!) 
 //(universidade.h e disciplina.h incluem departamento.h, logo departamento.h não pode incluir 
 //universidade.h nem disciplina.h)

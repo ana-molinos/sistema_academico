@@ -9,7 +9,7 @@ private:
     Departamento *pDptoFiliado;
 
 public:
-    Professor(int diaNa, int mesNa, int anoNa, const char* nome = "");
+    Professor(int diaNa, int mesNa, int anoNa, MinhaString nome = "");
     Professor();
     ~Professor();
     void setUniv(Universidade* pU);

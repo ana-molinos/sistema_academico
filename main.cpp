@@ -1,6 +1,5 @@
 #include "principal.h"
 
-
 int main(){
 
     Principal objeto;

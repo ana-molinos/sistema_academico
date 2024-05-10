@@ -1,10 +1,9 @@
 #include "pessoa.h"
-#include <string.h>
-#include <iostream>
-using namespace std;
+#include <stdio.h>
+
 
 //construtora
-Pessoa::Pessoa(int diaNa, int mesNa, int anoNa, const char* nome){
+Pessoa::Pessoa(int diaNa, int mesNa, int anoNa, MinhaString nome){
     inicializa(diaNa, mesNa, anoNa, nome);
 }
 
@@ -21,11 +20,11 @@ Pessoa::~Pessoa(){
 
 }
 
-void Pessoa::inicializa(int diaNa, int mesNa, int anoNa, const char* nome){
+void Pessoa::inicializa(int diaNa, int mesNa, int anoNa, MinhaString nome){
     dia = diaNa;
     mes = mesNa;
     ano = anoNa;
-    strcpy(nomeP, nome);
+    nomeP = nome;
     idade = 0; //pratica de segurança
 }
 

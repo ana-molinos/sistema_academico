@@ -1,4 +1,5 @@
 #pragma once
+#include "minhaString.h"
 
 class Pessoa
 {
@@ -8,7 +9,7 @@ protected:
     int mes;
     int ano;
     int idade;
-    char nomeP[30];
+    MinhaString nomeP;
 
     /*
         Ponteiros que estabelecem a relacação de associação entre o objeto pessoa e os objetos
@@ -17,7 +18,7 @@ protected:
     */
 
 public:
-    Pessoa(int diaNa, int mesNa, int anoNa, const char* nome = ""); //construtora
+    Pessoa(int diaNa, int mesNa, int anoNa, MinhaString nome = ""); //construtora
     /*
       Aqui a construtora está utilizando um valor por default para o nome, que seria uma string vazia;
       Isso permite que o usuario possa chamar a construtora sem passar o parametro nome
@@ -33,7 +34,7 @@ public:
 
     ~Pessoa();//destrutora
 
-    void inicializa(int diaNa, int mesNa, int anoNa, const char* nome = "");
+    void inicializa(int diaNa, int mesNa, int anoNa, MinhaString nome = "");
     /*
         Aqui foi criada uma função inicializa para ser utilizada como ferramenta pelas funções
         construtoras, que irao incializar de diferentes maneiras os objetos. (ainda não entendi bem)

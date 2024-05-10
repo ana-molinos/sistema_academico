@@ -7,11 +7,11 @@ private:
     int raAluno;
 
 public:
-    Aluno(int diaNa, int mesNa, int anoNa, const char* nome = "", int ra = -1);
+    Aluno(int diaNa, int mesNa, int anoNa, MinhaString nome = "", int ra = -1);
     Aluno();
     ~Aluno();
     void setRaAluno(int ra);
     int getRaAluno();
-    char* getNome();
+    MinhaString getNome();
     void imprimeDadosAlunos();
 };

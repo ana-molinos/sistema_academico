@@ -1,5 +1,6 @@
 #pragma once
 #include "elAluno.h"
+#include "minhaString.h"
 
 class ListaAluno{
 private:

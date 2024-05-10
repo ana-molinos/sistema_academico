@@ -1,9 +1,10 @@
 #include "aluno.h"
 #include <iostream>
+#include "minhaString.h"
 using namespace std;
 
 
-Aluno::Aluno(int diaNa, int mesNa, int anoNa, const char* nome, int ra):
+Aluno::Aluno(int diaNa, int mesNa, int anoNa, MinhaString nome, int ra):
 Pessoa(diaNa, mesNa, anoNa, nome)
 {
     raAluno = ra;
@@ -30,7 +31,7 @@ int Aluno::getRaAluno()
     return raAluno;
 }
 
-char* Aluno::getNome(){
+MinhaString Aluno::getNome(){
     return nomeP;
 }
 

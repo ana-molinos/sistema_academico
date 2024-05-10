@@ -1,5 +1,6 @@
 #include "elAluno.h"
 #include <iostream>
+#include "minhaString.h"
 using namespace std;
 
 ElAluno::ElAluno(){
@@ -38,7 +39,7 @@ ElAluno* ElAluno::getpElAlunoProx(){
     return pElAlunoProx;
 }
 
-char* ElAluno::getNome(){
+MinhaString ElAluno::getNome(){
     return pAluno->getNome();
 }
 
