@@ -1,5 +1,6 @@
 #pragma once
-#include "listaDisciplina.h"
+#include "lista.h"
+#include "minhaString.h"
 
 class Universidade;
 class Disciplina;
@@ -11,16 +12,16 @@ class Departamento{
 
 private:
     int id;
-    char nome[100];
+    MinhaString nome;
     Universidade *pUniv;
-    ListaDisciplina objListaDisciplinas;
+    Lista<Disciplina> objListaDisciplinas;
 
 public:
     Departamento(int n_id = 0, const char* nome_dpto = "");
     ~Departamento();
     int getId();
     void setNome(const char* n);
-    char* getNome();
+    MinhaString getNome();
     void setUniv(Universidade* pU);
     void incluiDisciplina(Disciplina* pDisc);
     void listaDisciplinas();

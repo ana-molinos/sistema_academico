@@ -35,7 +35,8 @@ void Professor::setUniv(Universidade* pU){
 }
 
 void Professor::imprimeNomeUniv(){
-    cout << nomeP << " - " << pUniv->getNome() << endl;
+    MinhaString nomeUniv = pUniv->getNome();
+    cout << nomeP << " - " << nomeUniv << endl;
 }
 
 void Professor::setDptoFiliado(Departamento* pDp){
@@ -43,5 +44,7 @@ void Professor::setDptoFiliado(Departamento* pDp){
 }
 
 void Professor::imprimeNomeUnivDpto(){
-    cout << nomeP << " - " << pUniv->getNome() << ": " << pDptoFiliado->getNome() << endl;
+    MinhaString nomeUniv = pUniv->getNome();
+    MinhaString nomeDpto = pDptoFiliado->getNome();
+    cout << nomeP << " - " << nomeUniv << ": " << nomeDpto << endl;
 }

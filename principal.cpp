@@ -178,11 +178,11 @@ void Principal::imprimeDadosProfs()
 
 void Principal::imprimeDptos()
 {
-    utfpr.imprimeDptos();
+    utfpr.listaDptos();
     cout << endl;
-    princeton.imprimeDptos();
+    princeton.listaDptos();
     cout << endl;
-    cambridge.imprimeDptos();
+    cambridge.listaDptos();
 }
 
 void Principal::imprimeDisciplinas()

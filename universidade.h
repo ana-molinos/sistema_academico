@@ -1,15 +1,12 @@
 #pragma once
-#include "departamento.h"
-#include <string.h>
-#include <iostream>
-using namespace std;
+#include "minhaString.h"
+#include "listaDepartamento.h"
 
 class Universidade
 {
 private:
-    char nomeUniv[30];
-
-    Departamento* dptos[50];
+    MinhaString nomeUniv;
+    ListaDepartamento objListaDepartamentos;
 
 public:
     Universidade(const char* nome = "");
@@ -17,7 +14,7 @@ public:
       e ele está setado como vazio por default*/
     ~Universidade();
     void setNome(const char* nome);
-    char* getNome();
-    void setDpto(Departamento* pD);
-    void imprimeDptos();
+    MinhaString getNome();
+    void incluiDpto(Departamento* pDpto);
+    void listaDptos();
 };

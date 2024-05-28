@@ -13,9 +13,10 @@ private:
     //em relacão a informação passada pelo usuario!
 
 public:
-    MinhaString(const char* s = "");
+    MinhaString(const char* s);
+    MinhaString();
     ~MinhaString();
-    char* getString();
+    const char* getString();
     void operator = (const char* s);
     //Permite que uma string seja atribuída a um objeto da classe MinhaString
     void operator = (MinhaString& s);
@@ -24,32 +25,24 @@ public:
     //Compara dois objetos da classe MinhaString e diz se são iguais
     bool operator != (MinhaString& s);
     //Compara dois objetos da classe MinhaString e diz se são diferentes
-    char operator [] (int i);
-    //Retorna o caracter da posição i
+
+    friend ostream &operator<<(ostream &saida, MinhaString& s);
+    friend istream &operator >> (istream &entrada, MinhaString& s);
+
     
 };
 
-inline ostream& operator<<(ostream& saida, MinhaString& s){
-    saida << s.getString();
-    return saida;
-}
+
 //A sobrecarga do operador << necessita de 2 parâmetros, por isso, a função é declarada e implementada
 //diretamente no cabeçalho da classe.
 //ostream& é o tipo do retorno (pois consiste em passagem de parâmetro por referência escondida e
 //e o operador << faz parte do fluxo de saída [output stream = ostream])
 
 //implementação retirada do livro
-inline istream& operator >> (istream& entrada, MinhaString& s){
-    entrada >> s;
-    return entrada;
-}
+
 
 //Concatena duas strings (junta as duas strings presentes em dois objetos diferentes da classe
 //MinhaString) - usar strcat [char *strcat( char *dest, const char *src );]
-inline const char* operator + (MinhaString& s1, MinhaString& s2){
-    
-    return strcat(s1.getString(), s2.getString());
-}
 
 /*  MinhaString* minhaString = new MinhaString;
 

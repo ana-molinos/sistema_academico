@@ -1,13 +1,13 @@
 #include "disciplina.h"
 #include "departamento.h"
-#include <string.h>
 #include <iostream>
 using namespace std;
 
 Disciplina::Disciplina(int n_id, const char* nome_disc):
-objListaAluno()
+objListaAlunos(),
+nome(nome_disc)
 {
-    inicializa(n_id, nome_disc);
+    id = n_id;
     pDptoAssociado = NULL;
 }
 
@@ -17,7 +17,7 @@ Disciplina::~Disciplina(){
 
 void Disciplina::inicializa(int n_id, const char* nome_disc){
     id = n_id;
-    strcpy(nome, nome_disc);
+    nome = nome_disc;
 }
 
 void Disciplina::setId(int n_id){
@@ -28,11 +28,11 @@ int Disciplina::getId(){
     return id;
 }
 
-void Disciplina::setNome(const char* nome_Disc){
-    strcpy(nome, nome_Disc);
+void Disciplina::setNome(const char* nome_disc){
+    nome = nome_disc;
 }
 
-char* Disciplina::getNome(){
+MinhaString Disciplina::getNome(){
     return nome;
 }
 
@@ -50,10 +50,10 @@ Departamento* Disciplina::getDptoAssociado()
 }
 
 void Disciplina::incluiAluno(Aluno* pAluno){
-    objListaAluno.incluiAluno(pAluno);
+    objListaAlunos.incluaInfo(pAluno);
 }
 
 void Disciplina::listaAlunos(){
    cout << "LISTA DE ALUNOS DA DISCIPLINA " << nome << endl;
-   objListaAluno.listeAlunos();
+   //objListaAlunos.imprimeLista();
 }

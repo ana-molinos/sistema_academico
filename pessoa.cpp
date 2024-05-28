@@ -3,8 +3,10 @@
 
 
 //construtora
-Pessoa::Pessoa(int diaNa, int mesNa, int anoNa, MinhaString nome){
-    inicializa(diaNa, mesNa, anoNa, nome);
+Pessoa::Pessoa(int diaNa, int mesNa, int anoNa, MinhaString nome):
+nomeP(nome)
+{
+    inicializa(diaNa, mesNa, anoNa);
 }
 
 //construtora sem parametros

@@ -4,11 +4,19 @@
 MinhaString::MinhaString(const char* s):
 tamanho(strlen(s))//chamada da construtora do objeto "tamanho" da classe Inteiro
 {
+    pString = NULL;
     setString(s);
 }
 
+MinhaString::MinhaString():
+tamanho(0)
+{
+    pString = NULL;
+}
+
 MinhaString::~MinhaString(){
-    delete pString;
+    if(pString!=NULL)
+        delete [] pString;
     pString = NULL;
 }
 
@@ -17,14 +25,19 @@ void MinhaString::setString(const char* s){
     strcpy(pString, s);
 }
 
-char* MinhaString::getString(){
+const char* MinhaString::getString(){
     return pString;
 }
 
 void MinhaString::operator=(const char* s){
-    delete [] pString; //desaloca a String atual
-    tamanho = strlen(s);//define o novo tamanho
-    setString(s);//define a nova String
+    
+    if(pString!=s )
+    {
+        if(pString!=NULL)
+            delete []pString; //desaloca a String atual
+        tamanho = strlen(s);//define o novo tamanho
+        setString(s);//define a nova String 
+    }
 }
 
 void MinhaString::operator=(MinhaString& s){
@@ -47,7 +60,12 @@ bool MinhaString::operator!=(MinhaString& s){
     return false;
 }
 
-char MinhaString::operator[](int i){
-    return *(pString+i);
+ostream &operator<<(ostream &saida, MinhaString& s){
+    saida << s.getString();
+    return saida;
 }
 
+istream &operator >> (istream &entrada, MinhaString& s){
+    entrada >> s;
+    return entrada;
+}

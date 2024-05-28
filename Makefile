@@ -1,3 +1,3 @@
 all:
 
-	g++ -o sis_acad main.cpp principal.cpp pessoa.cpp professor.cpp aluno.cpp universidade.cpp departamento.cpp disciplina.cpp elDisciplina.cpp elAluno.cpp listaAluno.cpp listaDisciplina.cpp minhaString.cpp
+	g++ -g -o sis_acad main.cpp principal.cpp pessoa.cpp professor.cpp aluno.cpp universidade.cpp departamento.cpp disciplina.cpp minhaString.cpp elemento.h lista.h listaDepartamento.cpp

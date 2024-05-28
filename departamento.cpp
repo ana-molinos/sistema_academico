@@ -5,10 +5,10 @@
 using namespace std;
 
 Departamento::Departamento(int n_id, const char* nome_dpto):
-objListaDisciplinas()
+objListaDisciplinas(),
+nome(nome_dpto)
 {
     id = n_id;
-    strcpy(nome, nome_dpto);
     pUniv = NULL;
 }
 
@@ -24,10 +24,10 @@ int Departamento::getId()
 
 void Departamento::setNome(const char* n)
 {
-    strcpy(nome, n);
+    nome = n;
 }
 
-char* Departamento::getNome()
+MinhaString Departamento::getNome()
 {
     return nome;
 }
@@ -35,17 +35,17 @@ char* Departamento::getNome()
 void Departamento::setUniv(Universidade *pU)
 {
     pUniv = pU;
-    pU->setDpto(this);
+    pU->incluiDpto(this);
     //toda vez que associo uma univ a um dpto, ja estou incluindo ele na lista de dptos associados da univ
 }
 
 void Departamento::incluiDisciplina(Disciplina* pDisc)
 {
-   objListaDisciplinas.incluiDisciplina(pDisc);
+   objListaDisciplinas.incluaInfo(pDisc);
 }
 
 void Departamento::listaDisciplinas()
 {
     cout << "LISTA DE DISCIPLINAS - " << nome << endl;
-    objListaDisciplinas.listeDisciplinas();
+    //objListaDisciplinas.imprimeLista();
 }

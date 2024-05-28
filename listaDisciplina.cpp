@@ -3,56 +3,56 @@
 using namespace std;
 
 ListaDisciplina::ListaDisciplina(){
-    pElDiscPrim = NULL;
-    pElDiscUlt = NULL;
+    pDiscPrim = NULL;
+    pDiscUlt = NULL;
 }
 
 ListaDisciplina::~ListaDisciplina(){
-    ElDisciplina* paux;
-    paux = pElDiscPrim;
+    Elemento<Disciplina>* paux;
+    paux = pDiscPrim;
 
     while(paux != NULL)
     {
-        pElDiscPrim = paux->getpElDiscProx();
+        pDiscPrim = paux->getProximo();
         delete paux;
-        paux = pElDiscPrim;
+        paux = pDiscPrim;
     }
 
-    pElDiscPrim = NULL;
-    pElDiscUlt = NULL;
+    pDiscPrim = NULL;
+    pDiscUlt = NULL;
 }
 
 void ListaDisciplina::incluiDisciplina(Disciplina* pDisc){
-    ElDisciplina* paux; //ponteiro auxiliar para o elemento disciplina
+    Elemento<Disciplina>* paux; //ponteiro auxiliar para o elemento disciplina
 
     //alocação dinamica de um novo objeto elemento disciplina que tem seu endereço passado para paux
-    paux = new ElDisciplina(); 
+    paux = new Elemento<Disciplina>(); 
 
     //o elemento disciplina passa a apontar para a disciplina que esta sendo incluida
-    paux->setpDisc(pDisc);
+    paux->setInfo(pDisc);
 
-    if(pElDiscPrim == NULL)
+    if(pDiscPrim == NULL)
     {
-        pElDiscPrim = paux;   
-        pElDiscUlt = paux;
+        pDiscPrim = paux;   
+        pDiscUlt = paux;
     }
     else
     {
         //o prox do ultimo elemento disciplina deve apontar para o elemento disciplina atual
-        pElDiscUlt->setpElDiscProx(paux);
+        pDiscUlt->setProximo(paux);
         //o anterior do elemento disciplina em qeustão deve receber o ultimo elemento disciplina lista
-        paux->setpElDiscAnt(pElDiscUlt);
+        paux->setAnterior(pDiscUlt);
         //a ultima disciplina deve ser atualizada para a disciplina atual
-        pElDiscUlt = paux;
+        pDiscUlt = paux;
     }
 }
 
 void ListaDisciplina::listeDisciplinas(){
-    ElDisciplina* pElDisc = pElDiscPrim;
+    Elemento<Disciplina>* pDisc = pDiscPrim;
 
-    while(pElDisc != NULL)
+    while(pDisc != NULL)
     {
-        cout << "Nome: " << pElDisc->getNome() << " - " << "ID :" << pElDisc->getId() << endl;
-        pElDisc = pElDisc->getpElDiscProx();
+        cout << "Nome: " << pDisc->getInfo()->getNome() << " - " << "ID :" << pDisc->getInfo()->getId() << endl;
+        pDisc = pDisc->getProximo();
     }
 }
