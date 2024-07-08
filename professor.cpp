@@ -8,7 +8,7 @@ using namespace std;
     da classe Pessoa, passando os parametros "daqui para lá".
 */
 
-Professor::Professor(int diaNa, int mesNa, int anoNa, MinhaString nome):
+Professor::Professor(int diaNa, int mesNa, int anoNa, const char* nome):
 Pessoa(diaNa, mesNa, anoNa, nome) //perceba que aqui é uma chamada de método, não uma declaração!
 {
     pUniv = NULL;

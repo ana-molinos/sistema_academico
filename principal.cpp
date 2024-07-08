@@ -1,6 +1,5 @@
 #include "principal.h"
 #include <iostream>
-#include "minhaString.h"
 using namespace std;
 
 /*

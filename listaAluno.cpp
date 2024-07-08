@@ -1,5 +1,7 @@
 #include "listaAluno.h"
-#include "minhaString.h"
+#include <string.h>
+#include <iostream> 
+using namespace std;
 
 ListaAluno::ListaAluno(int n_a, int q_a)
 {

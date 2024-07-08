@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Aluno::Aluno(int diaNa, int mesNa, int anoNa, MinhaString nome, int ra):
+Aluno::Aluno(int diaNa, int mesNa, int anoNa, const char* nome, int ra):
 Pessoa(diaNa, mesNa, anoNa, nome)
 {
     raAluno = ra;
@@ -31,7 +31,7 @@ int Aluno::getRaAluno()
     return raAluno;
 }
 
-MinhaString Aluno::getNome(){
+char* Aluno::getNome(){
     return nomeP;
 }
 
