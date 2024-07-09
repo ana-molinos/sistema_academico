@@ -9,7 +9,7 @@ protected:
     int mes;
     int ano;
     int idade;
-    char* nomeP;
+    char nomeP[50];
 
     /*
         Ponteiros que estabelecem a relacação de associação entre o objeto pessoa e os objetos

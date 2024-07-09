@@ -1,15 +1,15 @@
 #pragma once
-#include "elDisciplina.h"
+#include "lista.h"
 #include "disciplina.h"
 
 class ListaDisciplina{
 private:
-    ElDisciplina* pElDiscPrim;
-    ElDisciplina* pElDiscUlt;
+    Lista<Disciplina> lista;
 
 public:
     ListaDisciplina();
     ~ListaDisciplina();
     void incluiDisciplina(Disciplina* pDisc);
-    void listeDisciplinas();
+    void listaDisciplinas();
+    void limpaListaDisciplinas();
 };

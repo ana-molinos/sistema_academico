@@ -39,7 +39,7 @@ ElAluno* ElAluno::getpElAlunoProx(){
     return pElAlunoProx;
 }
 
-MinhaString ElAluno::getNome(){
+char* ElAluno::getNome(){
     return pAluno->getNome();
 }
 

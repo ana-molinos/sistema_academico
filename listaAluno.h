@@ -1,18 +1,15 @@
 #pragma once
-#include "elAluno.h"
-#include "minhaString.h"
+#include "lista.h"
+#include "aluno.h"
 
 class ListaAluno{
 private:
-    int n_alunos;
-    int qtdd_alunos;
-    ElAluno* pElAlunoPrim;
-    ElAluno* pElAlunoUlt; 
+    Lista<Aluno> lista;
 
 public:
-    ListaAluno(int n_a = 45, int q_a = 0);
+    ListaAluno();
     ~ListaAluno();
     void incluiAluno(Aluno* pAluno);
-    void listeAlunos();
-
+    void listaAlunos();
+    void limpaListaAlunos();
 };

@@ -5,7 +5,7 @@
 using namespace std;
 
 Disciplina::Disciplina(int n_id, const char* nome_disc):
-objListaAluno()
+objListaAlunos()
 {
     inicializa(n_id, nome_disc);
     pDptoAssociado = NULL;
@@ -50,10 +50,10 @@ Departamento* Disciplina::getDptoAssociado()
 }
 
 void Disciplina::incluiAluno(Aluno* pAluno){
-    objListaAluno.incluiAluno(pAluno);
+    objListaAlunos.incluiAluno(pAluno);
 }
 
 void Disciplina::listaAlunos(){
    cout << "LISTA DE ALUNOS DA DISCIPLINA " << nome << endl;
-   objListaAluno.listeAlunos();
+   objListaAlunos.listaAlunos();
 }

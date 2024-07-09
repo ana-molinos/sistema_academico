@@ -1,15 +1,13 @@
 #pragma once
 #include "listaAluno.h"
-
 class Departamento;
 
-class Disciplina
-{
+class Disciplina{
 private:
     int id;
     char nome[150];
     Departamento* pDptoAssociado;  
-    ListaAluno objListaAluno;    
+    ListaAluno objListaAlunos;    
 
 public:
     Disciplina(int n_id = 0, const char* nome_disc = "");

@@ -16,6 +16,6 @@ public:
     ElAluno* getpElAlunoAnt();
     void setpElAlunoProx(ElAluno* pElAluno);
     ElAluno* getpElAlunoProx();
-    MinhaString getNome();
+    char* getNome();
     int getRa();
 };

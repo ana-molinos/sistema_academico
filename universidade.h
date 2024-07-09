@@ -1,5 +1,5 @@
 #pragma once
-#include "departamento.h"
+#include "listaDepartamento.h"
 #include <string.h>
 #include <iostream>
 using namespace std;
@@ -8,8 +8,7 @@ class Universidade
 {
 private:
     char nomeUniv[30];
-
-    Departamento* dptos[50];
+    ListaDepartamento objListaDepartamentos;
 
 public:
     Universidade(const char* nome = "");
@@ -18,6 +17,6 @@ public:
     ~Universidade();
     void setNome(const char* nome);
     char* getNome();
-    void setDpto(Departamento* pD);
+    void incluiDpto(Departamento* pDpto);
     void imprimeDptos();
 };

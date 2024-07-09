@@ -15,6 +15,7 @@ objListaDisciplinas()
 Departamento::~Departamento()
 {
     pUniv = NULL;
+    objListaDisciplinas.limpaListaDisciplinas();
 }
 
 int Departamento::getId()
@@ -35,7 +36,7 @@ char* Departamento::getNome()
 void Departamento::setUniv(Universidade *pU)
 {
     pUniv = pU;
-    pU->setDpto(this);
+    pU->incluiDpto(this);
     //toda vez que associo uma univ a um dpto, ja estou incluindo ele na lista de dptos associados da univ
 }
 
@@ -47,5 +48,5 @@ void Departamento::incluiDisciplina(Disciplina* pDisc)
 void Departamento::listaDisciplinas()
 {
     cout << "LISTA DE DISCIPLINAS - " << nome << endl;
-    objListaDisciplinas.listeDisciplinas();
+    objListaDisciplinas.listaDisciplinas();
 }
