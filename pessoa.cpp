@@ -55,3 +55,8 @@ char* Pessoa::getNome()
 {
     return nomeP;
 }
+
+void Pessoa::informaProventos()
+{
+    cout << nomeP << " nao possui proventos." << endl;
+}

@@ -4,6 +4,7 @@
 #include "aluno.h"
 #include "disciplina.h"
 #include "listaPessoa.h"
+#include "estagiario.h"
 
 /*
     A classe principal deve ter como atributos os objetos que seriam declarados e instanciados na main.
@@ -36,6 +37,8 @@ private:
     Aluno ana;
     Aluno beto;
     Aluno carla;
+
+    Estagiario estag;
 
     int diaAtual;
     int mesAtual;

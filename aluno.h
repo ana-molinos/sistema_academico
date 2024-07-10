@@ -3,7 +3,7 @@
 
 class Aluno : public Pessoa
 {
-private:
+protected:
     int raAluno;
 
 public:

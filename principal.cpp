@@ -27,7 +27,8 @@ tecProg(),
 gaal(),
 fsi(),
 socio(),
-ed1()
+ed1(),
+estag()
 {
     //RELACIONAMENTOS ENTRE OBJETOS DEVEM SER FEITOS ANTES DAS EXECUÇÕES (NAS CONSTRUTORAS)!!!
 
@@ -78,6 +79,9 @@ void Principal::inicializaProfessores()
     simao.inicializa(3, 10, 1976, "Jean Simão");
     einstein.inicializa(14, 3, 1879, "Albert Einstein");
     newton.inicializa(4, 1, 1643, "Isaac Newton");
+
+    simao.setSalario(5000.00);
+    simao.setBolsa(2330.30);
 
     //associa os professores às universidades
     simao.setUniv(&utfpr);
@@ -143,6 +147,12 @@ void Principal::inicializaAlunos()
     objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&ana));
     objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&beto));
     objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&carla));
+
+    estag.inicializa(2, 9, 1997, "Pedro Kiche");
+    estag.setRaAluno(2897462);
+    estag.setBolsa(700.00);
+
+    objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&estag));
 }
 
 void Principal::calculaIdades()
@@ -233,6 +243,10 @@ void Principal::executar(){
     imprimeAlunos();
     cout<< endl << "Lista de pessoas do sistema acadêmico:" << endl;
     objListaPessoas.listaPessoas();
+
+    cout << endl << "Lista de proventos das pessoas registradas no sistema." << endl;
+
+    objListaPessoas.informaProventos();
     
     /*ana.calculaImprime(diaAtual, mesAtual, anoAtual);
     ana.imprimeDadosAlunos();*/

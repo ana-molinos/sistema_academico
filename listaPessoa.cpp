@@ -34,3 +34,14 @@ void ListaPessoa::limpaListaPessoas()
 {
     lista.limpaLista();
 }
+
+void ListaPessoa::informaProventos()
+{
+    Elemento<Pessoa>* pAux = lista.getPrimeiro();
+
+    while(pAux != NULL)
+    {
+        pAux->getInfo()->informaProventos();
+        pAux = pAux->getProx();
+    }
+}

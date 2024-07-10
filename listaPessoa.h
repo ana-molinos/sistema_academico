@@ -12,4 +12,5 @@ public:
     void incluiPessoa(Pessoa* pPessoa);
     void listaPessoas();
     void limpaListaPessoas();
+    void informaProventos();
 };

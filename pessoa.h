@@ -45,4 +45,5 @@ public:
     void imprimeDados();
     void calculaImprime(int diaAtual, int mesAtual, int anoAtual);
     char* getNome();
+    virtual void informaProventos();
 };

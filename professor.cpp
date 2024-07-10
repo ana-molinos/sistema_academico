@@ -8,11 +8,13 @@ using namespace std;
     da classe Pessoa, passando os parametros "daqui para lá".
 */
 
-Professor::Professor(int diaNa, int mesNa, int anoNa, const char* nome):
+Professor::Professor(int diaNa, int mesNa, int anoNa, const char* nome, float sal, float bolsa):
 Pessoa(diaNa, mesNa, anoNa, nome) //perceba que aqui é uma chamada de método, não uma declaração!
 {
     pUniv = NULL;
     pDptoFiliado = NULL;
+    setSalario(sal);
+    setBolsa(bolsa);
 }
 
 Professor::Professor():
@@ -44,4 +46,30 @@ void Professor::setDptoFiliado(Departamento* pDp){
 
 void Professor::imprimeNomeUnivDpto(){
     cout << nomeP << " - " << pUniv->getNome() << ": " << pDptoFiliado->getNome() << endl;
+}
+
+void Professor::informaProventos()
+{
+    cout << nomeP << ", professor na " << pUniv->getNome() << " recebe R$ ";
+    printf("%.2f\n", salario+bolsaProj);
+}
+
+void Professor::setSalario(float sal)
+{
+    salario = sal;
+}
+
+float Professor::getSalario()
+{
+    return salario;
+}
+
+void Professor::setBolsa(float bolsa)
+{
+    bolsaProj = bolsa;
+}
+
+float Professor::getBolsa()
+{
+    return bolsaProj;
 }
