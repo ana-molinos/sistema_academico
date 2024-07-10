@@ -88,6 +88,10 @@ void Principal::inicializaProfessores()
     simao.setDptoFiliado(&daeln); 
     einstein.setDptoFiliado(&fisPrinceton);
     newton.setDptoFiliado(&matCambridge);
+
+    objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&simao));
+    objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&einstein));
+    objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&newton));
 }
 
 void Principal::inicializaDisciplinas()
@@ -135,6 +139,10 @@ void Principal::inicializaAlunos()
     ana.setRaAluno(2582694);
     beto.setRaAluno(2698341);
     carla.setRaAluno(2764893);
+
+    objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&ana));
+    objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&beto));
+    objListaPessoas.incluiPessoa(static_cast<Pessoa*>(&carla));
 }
 
 void Principal::calculaIdades()
@@ -223,6 +231,8 @@ void Principal::executar(){
     imprimeDisciplinas();    
     cout << endl;
     imprimeAlunos();
+    cout<< endl << "Lista de pessoas do sistema acadêmico:" << endl;
+    objListaPessoas.listaPessoas();
     
     /*ana.calculaImprime(diaAtual, mesAtual, anoAtual);
     ana.imprimeDadosAlunos();*/

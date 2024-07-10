@@ -50,3 +50,8 @@ void Pessoa::calculaImprime(int diaAtual, int mesAtual, int anoAtual){
     calculaIdade(diaAtual, mesAtual, anoAtual);
     imprimeDados();
 }
+
+char* Pessoa::getNome()
+{
+    return nomeP;
+}

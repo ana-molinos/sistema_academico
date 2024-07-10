@@ -44,4 +44,5 @@ public:
     int informaIdade(); //getIdade
     void imprimeDados();
     void calculaImprime(int diaAtual, int mesAtual, int anoAtual);
+    char* getNome();
 };

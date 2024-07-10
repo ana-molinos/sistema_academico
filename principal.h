@@ -3,6 +3,7 @@
 #include "professor.h"
 #include "aluno.h"
 #include "disciplina.h"
+#include "listaPessoa.h"
 
 /*
     A classe principal deve ter como atributos os objetos que seriam declarados e instanciados na main.
@@ -39,6 +40,8 @@ private:
     int diaAtual;
     int mesAtual;
     int anoAtual;
+
+    ListaPessoa objListaPessoas;
 
 public:
     Principal(); //construtora que incializa os atributos (que eram os objetos da main)
