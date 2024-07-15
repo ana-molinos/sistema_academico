@@ -2,14 +2,18 @@
 #include <iostream>
 using namespace std;
 
+//inicialização de atributo estático
+int Pessoa::contPessoas = 0;
 
 //construtora
 Pessoa::Pessoa(int diaNa, int mesNa, int anoNa, const char* nome){
+    contPessoas++;
     inicializa(diaNa, mesNa, anoNa, nome);
 }
 
 //construtora sem parametros
 Pessoa::Pessoa(){
+    contPessoas++;
     inicializa(0, 0, 0);
 }
 /*
@@ -18,7 +22,7 @@ Pessoa::Pessoa(){
 */
 
 Pessoa::~Pessoa(){
-
+    contPessoas--;
 }
 
 void Pessoa::inicializa(int diaNa, int mesNa, int anoNa, const char* nome){
@@ -59,4 +63,9 @@ char* Pessoa::getNome()
 void Pessoa::informaProventos()
 {
     cout << nomeP << " nao possui proventos." << endl;
+}
+
+int Pessoa::getContPessoas()
+{
+    return contPessoas;
 }

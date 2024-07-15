@@ -10,6 +10,7 @@ protected:
     int ano;
     int idade;
     char nomeP[50];
+    static int contPessoas;
 
     /*
         Ponteiros que estabelecem a relacação de associação entre o objeto pessoa e os objetos
@@ -46,4 +47,5 @@ public:
     void calculaImprime(int diaAtual, int mesAtual, int anoAtual);
     char* getNome();
     virtual void informaProventos();
+    static int getContPessoas();
 };

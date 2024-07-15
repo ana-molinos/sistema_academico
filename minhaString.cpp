@@ -1,5 +1,6 @@
 #include "minhaString.h"
 #include <string.h>
+using namespace mstr;
 
 MinhaString::MinhaString(const char* s):
 tamanho(strlen(s))//chamada da construtora do objeto "tamanho" da classe Inteiro

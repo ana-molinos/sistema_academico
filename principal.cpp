@@ -243,6 +243,7 @@ void Principal::executar(){
     imprimeAlunos();
     cout<< endl << "Lista de pessoas do sistema acadêmico:" << endl;
     objListaPessoas.listaPessoas();
+    cout << Pessoa::getContPessoas() << " pessoas registradas no sistema" << endl;
 
     cout << endl << "Lista de proventos das pessoas registradas no sistema." << endl;
 

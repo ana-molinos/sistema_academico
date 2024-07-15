@@ -45,6 +45,11 @@ private:
     int anoAtual;
 
     ListaPessoa objListaPessoas;
+    /*OBS.: como meu sistema é estatico, não fica muito viável fazer isso, mas em um
+            sistema dinâmico, seria interessante ter listas das pessoas, universidades,
+            departamentos e por aí vai, que foram registrados. Para isso, cada vez que uma
+            entidade fosse cadastrada no sistema ela deveria ser incluida na lista geral 
+            correspondente ao seu tipo e nas listas específicas pertinentes*/
 
 public:
     Principal(); //construtora que incializa os atributos (que eram os objetos da main)
