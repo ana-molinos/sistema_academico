@@ -18,7 +18,7 @@ void ListaDisciplina::incluiDisciplina(Disciplina* pDisc){
 }
 
 void ListaDisciplina::listaDisciplinas(){
-    Elemento<Disciplina>* pAux = lista.getPrimeiro();
+    Lista<Disciplina>::Elemento* pAux = lista.getPrimeiro();
 
     while(pAux != NULL)
     {

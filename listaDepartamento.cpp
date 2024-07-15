@@ -21,7 +21,7 @@ void ListaDepartamento::incluiDpto(Departamento* pDpto)
 
 void ListaDepartamento::listaDptos()
 {
-    Elemento<Departamento>* pAux = lista.getPrimeiro();
+    Lista<Departamento>::Elemento* pAux = lista.getPrimeiro();
 
     while(pAux != NULL)
     {

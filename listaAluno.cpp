@@ -18,7 +18,7 @@ void ListaAluno::incluiAluno(Aluno* pAluno){
 
 void ListaAluno::listaAlunos()
 {
-    Elemento<Aluno>* pAux = lista.getPrimeiro();
+    Lista<Aluno>::Elemento* pAux = lista.getPrimeiro();
 
     if(pAux ==NULL)
         cout << "Nenhum aluno matriculado na disciplina!" << endl;

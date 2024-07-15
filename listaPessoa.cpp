@@ -21,7 +21,7 @@ void ListaPessoa::incluiPessoa(Pessoa* pPessoa)
 
 void ListaPessoa::listaPessoas()
 {
-    Elemento<Pessoa>* pAux = lista.getPrimeiro();
+    Lista<Pessoa>::Elemento* pAux = lista.getPrimeiro();
 
     while(pAux != NULL)
     {
@@ -37,7 +37,7 @@ void ListaPessoa::limpaListaPessoas()
 
 void ListaPessoa::informaProventos()
 {
-    Elemento<Pessoa>* pAux = lista.getPrimeiro();
+    Lista<Pessoa>::Elemento* pAux = lista.getPrimeiro();
 
     while(pAux != NULL)
     {
